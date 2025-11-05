@@ -1,1 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Landing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-main: #050816;
+      --bg-alt: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.15);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-full: 999px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.6);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.7),
+        transparent
+      );
+      border-bottom: 1px solid rgba(31, 41, 55, 0.85);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 30% 20%, #22c55e, #22c55e 2px, #4f46e5 60%, #020617 100%);
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.3);
+    }
+
+    .logo-text {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      padding: 6px 0;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #22c55e, #4f46e5);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      color: #f9fafb;
+      font-weight: 500;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(79, 70, 229, 0.45);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.94;
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        display: none;
+      }
+    }
+
+    /* Sections */
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding-top: 32px;
+      padding-bottom: 72px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-heading {
+      font-size: clamp(32px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 16px;
+    }
+
+    .hero-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      color: #f9fafb;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      text-decoration: none;
+    }
+
+    .hero-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    .hero-secondary {
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-visual {
+      position: relative;
+      border-radius: 26px;
+      background: radial-gradient(circle at 10% 0, #22c55e33, transparent 55%),
+        radial-gradient(circle at 80% 100%, #4f46e533, transparent 55%),
+        var(--bg-alt);
+      padding: 20px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      align-self: flex-start;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: var(--radius-full);
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-muted);
+    }
+
+    .hero-mock {
+      flex: 1;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero {
+        padding-top: 24px;
+      }
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .about-card {
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(31, 41, 55, 0.8);
+      padding: 20px 18px;
+    }
+
+    .about-placeholder {
+      height: 160px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(
+        135deg,
+        rgba(79, 70, 229, 0.18),
+        rgba(15, 23, 42, 0.9)
+      );
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+    }
+
+    @media (max-width: 880px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Benefits */
+
+    .benefits-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .benefit-item {
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 12px;
+      font-size: 13px;
+    }
+
+    .benefit-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: var(--accent-soft);
+      margin-bottom: 8px;
+    }
+
+    .benefit-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .benefit-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 960px) {
+      .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Steps */
+
+    .steps-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step-item {
+      border-radius: var(--radius-md);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-subtle);
+      padding: 16px 14px;
+      font-size: 13px;
+    }
+
+    .step-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: var(--radius-full);
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .step-title {
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .step-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 880px) {
+      .steps-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Offer */
+
+    .offer-card {
+      margin-top: 20px;
+      border-radius: 20px;
+      background: radial-gradient(circle at 0 0, #22c55e22, transparent 55%),
+        radial-gradient(circle at 100% 100%, #4f46e522, transparent 60%),
+        rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 20px 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    .offer-badge {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .offer-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .offer-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .offer-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      color: #f9fafb;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .offer-terms {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .offer-visual {
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      height: 120px;
+    }
+
+    @media (max-width: 880px) {
+      .offer-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* FAQ */
+
+    .faq-grid {
+      margin-top: 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 16px;
+    }
+
+    .faq-item {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .faq-answer {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Responsible */
+
+    .responsible-card {
+      margin-top: 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 18px 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      background: rgba(15, 23, 42, 0.98);
+      padding: 16px 0;
+      margin-top: 24px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container header-inner">
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <div class="logo-text">Brand</div>
+        </div>
+        <nav>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#benefits" class="nav-link">Benefits</a>
+          <a href="#how-it-works" class="nav-link">How it works</a>
+          <a href="#offer" class="nav-link">Offer</a>
+          <a href="#faq" class="nav-link">FAQ</a>
+          <a href="#responsible" class="nav-link">Responsible</a>
+          <a href="https://stake.com" class="nav-cta" target="_blank" rel="noopener noreferrer">
+            Go to platform
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <div class="container hero-inner">
+          <div>
+            <h1 class="hero-heading">Hero title here</h1>
+            <p class="hero-text">
+              Hero description placeholder. Replace this text later.
+            </p>
+            <div class="hero-actions">
+              <a
+                href="https://stake.com"
+                class="hero-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Start now
+              </a>
+              <span class="hero-secondary">Secondary action or note</span>
+            </div>
+            <p class="hero-footnote">
+              18+ Only. Please play responsibly.
+            </p>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-tag">Visual placeholder</div>
+            <div class="hero-mock">
+              <!-- Insert mockup / image later -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="container">
+          <h2 class="section-title">About the platform</h2>
+          <p class="section-subtitle">
+            Short subtitle placeholder. Replace with your own copy.
+          </p>
+          <div class="about-grid" style="margin-top: 20px;">
+            <div class="about-card">
+              <!-- Text content about the platform -->
+            </div>
+            <div class="about-placeholder">
+              <!-- Image / stats / list placeholder -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits -->
+      <section id="benefits">
+        <div class="container">
+          <h2 class="section-title">Key benefits</h2>
+          <p class="section-subtitle">
+            Describe why users choose this platform.
+          </p>
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <div class="benefit-icon"></div>
+              <div class="benefit-title">Benefit 1</div>
+              <div class="benefit-text">Short description.</div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"></div>
+              <div class="benefit-title">Benefit 2</div>
+              <div class="benefit-text">Short description.</div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"></div>
+              <div class="benefit-title">Benefit 3</div>
+              <div class="benefit-text">Short description.</div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"></div>
+              <div class="benefit-title">Benefit 4</div>
+              <div class="benefit-text">Short description.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works">
+        <div class="container">
+          <h2 class="section-title">How it works</h2>
+          <p class="section-subtitle">
+            Explain the basic steps for a new user.
+          </p>
+          <div class="steps-grid">
+            <div class="step-item">
+              <div class="step-badge">1</div>
+              <div class="step-title">Step one</div>
+              <div class="step-text">Short explanation.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-badge">2</div>
+              <div class="step-title">Step two</div>
+              <div class="step-text">Short explanation.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-badge">3</div>
+              <div class="step-title">Step three</div>
+              <div class="step-text">Short explanation.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Offer -->
+      <section id="offer">
+        <div class="container">
+          <h2 class="section-title">Welcome offer</h2>
+          <p class="section-subtitle">
+            Describe the offer and basic conditions.
+          </p>
+          <div class="offer-card">
+            <div>
+              <div class="offer-badge">Limited time</div>
+              <div class="offer-title">Offer title placeholder</div>
+              <div class="offer-text">
+                Offer description placeholder. Replace with your own copy.
+              </div>
+              <a
+                href="https://stake.com"
+                class="offer-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Activate offer
+              </a>
+              <p class="offer-terms">
+                Terms & conditions apply. 18+ only.
+              </p>
+            </div>
+            <div class="offer-visual">
+              <!-- Visual placeholder -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="container">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-subtitle">Common questions and answers.</p>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <div class="faq-question">Question 1</div>
+              <div class="faq-answer">Answer placeholder.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Question 2</div>
+              <div class="faq-answer">Answer placeholder.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Question 3</div>
+              <div class="faq-answer">Answer placeholder.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Question 4</div>
+              <div class="faq-answer">Answer placeholder.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Responsible -->
+      <section id="responsible">
+        <div class="container">
+          <h2 class="section-title">Responsible use</h2>
+          <p class="section-subtitle">
+            Short message about responsible behaviour.
+          </p>
+          <div class="responsible-card">
+            <!-- Responsible message placeholder -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© Brand, 18+ only.</div>
+        <div class="footer-links">
+          <span class="footer-link">Privacy policy</span>
+          <span class="footer-link">Terms of use</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href").slice(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 72,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
 
