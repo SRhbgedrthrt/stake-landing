@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Landing</title>
+  <title>Stake – Online Entertainment Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Discover Stake – a global online entertainment platform with sports, live games, original titles, fast crypto payments and a powerful VIP program."
+  />
   <style>
     :root {
       --bg-main: #050816;
@@ -206,6 +210,12 @@
       margin-bottom: 16px;
     }
 
+    .hero-highlight {
+      background: linear-gradient(90deg, #22c55e, #4f46e5);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
     .hero-text {
       font-size: 15px;
       color: var(--text-muted);
@@ -286,6 +296,34 @@
       border-radius: 18px;
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .hero-mock-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-muted);
+    }
+
+    .hero-mock-pill {
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(31, 41, 55, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 11px;
+    }
+
+    .hero-mock-bar {
+      height: 5px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, #22c55e, #4f46e5);
+      width: 70%;
+      margin-top: 4px;
     }
 
     @media (max-width: 880px) {
@@ -310,6 +348,8 @@
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(31, 41, 55, 0.8);
       padding: 20px 18px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
     .about-placeholder {
@@ -321,6 +361,24 @@
         rgba(15, 23, 42, 0.9)
       );
       border: 1px dashed rgba(148, 163, 184, 0.6);
+      padding: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .about-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 11px;
+      margin-right: 6px;
+      margin-bottom: 6px;
     }
 
     @media (max-width: 880px) {
@@ -485,6 +543,13 @@
       background: rgba(15, 23, 42, 0.95);
       border: 1px dashed rgba(148, 163, 184, 0.6);
       height: 120px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px;
     }
 
     @media (max-width: 880px) {
@@ -571,17 +636,17 @@
       <div class="container header-inner">
         <div class="logo">
           <div class="logo-mark"></div>
-          <div class="logo-text">Brand</div>
+          <div class="logo-text">Stake Guide</div>
         </div>
         <nav>
           <a href="#about" class="nav-link">About</a>
-          <a href="#benefits" class="nav-link">Benefits</a>
+          <a href="#benefits" class="nav-link">Why Stake</a>
           <a href="#how-it-works" class="nav-link">How it works</a>
-          <a href="#offer" class="nav-link">Offer</a>
+          <a href="#offer" class="nav-link">Welcome offer</a>
           <a href="#faq" class="nav-link">FAQ</a>
           <a href="#responsible" class="nav-link">Responsible</a>
           <a href="https://stake.com" class="nav-cta" target="_blank" rel="noopener noreferrer">
-            Go to platform
+            Go to Stake
           </a>
         </nav>
       </div>
@@ -592,9 +657,14 @@
       <section class="hero" id="top">
         <div class="container hero-inner">
           <div>
-            <h1 class="hero-heading">Hero title here</h1>
+            <h1 class="hero-heading">
+              Discover <span class="hero-highlight">Stake</span> – next-level online entertainment
+            </h1>
             <p class="hero-text">
-              Hero description placeholder. Replace this text later.
+              Stake is one of the world’s most recognisable real-money gaming brands, combining
+              lightning-fast crypto payments, an intuitive interface and a huge choice of sports
+              and game formats in one place. Join millions of users who already enjoy fast action,
+              daily promotions and a powerful VIP system.
             </p>
             <div class="hero-actions">
               <a
@@ -603,18 +673,34 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Start now
+                Start on Stake
               </a>
-              <span class="hero-secondary">Secondary action or note</span>
+              <span class="hero-secondary">
+                No registration required on this site – you’ll sign up directly on Stake.
+              </span>
             </div>
             <p class="hero-footnote">
-              18+ Only. Please play responsibly.
+              18+ only. Real-money gaming involves risk. Please play responsibly.
             </p>
           </div>
           <div class="hero-visual">
-            <div class="hero-tag">Visual placeholder</div>
+            <div class="hero-tag">Stake snapshot (illustrative)</div>
             <div class="hero-mock">
-              <!-- Insert mockup / image later -->
+              <div class="hero-mock-row">
+                <span>Live sports</span>
+                <span class="hero-mock-pill">In-play markets</span>
+              </div>
+              <div class="hero-mock-bar"></div>
+              <div class="hero-mock-row">
+                <span>Original games</span>
+                <span class="hero-mock-pill">Instant action</span>
+              </div>
+              <div class="hero-mock-bar" style="width: 60%;"></div>
+              <div class="hero-mock-row">
+                <span>Crypto payments</span>
+                <span class="hero-mock-pill">Fast deposits & payouts</span>
+              </div>
+              <div class="hero-mock-bar" style="width: 85%;"></div>
             </div>
           </div>
         </div>
@@ -623,16 +709,47 @@
       <!-- About -->
       <section id="about">
         <div class="container">
-          <h2 class="section-title">About the platform</h2>
+          <h2 class="section-title">What is Stake?</h2>
           <p class="section-subtitle">
-            Short subtitle placeholder. Replace with your own copy.
+            Stake is a global online entertainment platform focused on real-money games,
+            sports and live events with crypto-friendly payments and a modern UX.
           </p>
           <div class="about-grid" style="margin-top: 20px;">
             <div class="about-card">
-              <!-- Text content about the platform -->
+              <p>
+                Stake brings together sports fans and game enthusiasts on a single, sleek platform.
+                You can explore pre-match and live events on major leagues, enjoy a wide selection of
+                real-time game formats and switch between verticals without leaving the site.
+              </p>
+              <br />
+              <p>
+                The interface is fast, clean and designed for both desktop and mobile. Markets
+                are updated in real time, balances refresh instantly and navigation is intuitive
+                even for first-time users. Everything is built around quick access to action.
+              </p>
+              <br />
+              <p>
+                Stake is also known for its active community: public bet slips, chats, social
+                media presence and regular campaigns with special boosts or missions help keep
+                the experience dynamic and engaging.
+              </p>
             </div>
             <div class="about-placeholder">
-              <!-- Image / stats / list placeholder -->
+              <div style="margin-bottom: 4px; font-weight: 500;">
+                Highlights at a glance
+              </div>
+              <div>
+                <span class="about-chip">Sports & live events</span>
+                <span class="about-chip">Original in-house games</span>
+                <span class="about-chip">Crypto-friendly</span>
+                <span class="about-chip">Fast withdrawals</span>
+                <span class="about-chip">VIP rewards</span>
+                <span class="about-chip">Mobile-first interface</span>
+              </div>
+              <div style="margin-top: 10px;">
+                Use this space for a screenshot, logo strip or a short feature list that matches
+                your target audience.
+              </div>
             </div>
           </div>
         </div>
@@ -641,30 +758,42 @@
       <!-- Benefits -->
       <section id="benefits">
         <div class="container">
-          <h2 class="section-title">Key benefits</h2>
+          <h2 class="section-title">Why players choose Stake</h2>
           <p class="section-subtitle">
-            Describe why users choose this platform.
+            A mix of speed, transparency and rewards makes Stake stand out among online gaming platforms.
           </p>
           <div class="benefits-grid">
             <div class="benefit-item">
               <div class="benefit-icon"></div>
-              <div class="benefit-title">Benefit 1</div>
-              <div class="benefit-text">Short description.</div>
+              <div class="benefit-title">Fast crypto payments</div>
+              <div class="benefit-text">
+                Stake supports popular digital assets and processes deposits and withdrawals quickly,
+                so you spend less time waiting and more time playing.
+              </div>
             </div>
             <div class="benefit-item">
               <div class="benefit-icon"></div>
-              <div class="benefit-title">Benefit 2</div>
-              <div class="benefit-text">Short description.</div>
+              <div class="benefit-title">Huge sports coverage</div>
+              <div class="benefit-text">
+                From top football leagues and basketball to niche events and e-sports, Stake offers
+                a broad range of markets with live odds and dynamic lines.
+              </div>
             </div>
             <div class="benefit-item">
               <div class="benefit-icon"></div>
-              <div class="benefit-title">Benefit 3</div>
-              <div class="benefit-text">Short description.</div>
+              <div class="benefit-title">Original game formats</div>
+              <div class="benefit-text">
+                Stake features in-house titles and instant-result games built for fast rounds,
+                simple rules and transparent mechanics.
+              </div>
             </div>
             <div class="benefit-item">
               <div class="benefit-icon"></div>
-              <div class="benefit-title">Benefit 4</div>
-              <div class="benefit-text">Short description.</div>
+              <div class="benefit-title">VIP and ongoing rewards</div>
+              <div class="benefit-text">
+                Active users can benefit from a multi-level VIP system, personalised bonuses and
+                regular promos such as races, challenges and seasonal offers.
+              </div>
             </div>
           </div>
         </div>
@@ -673,25 +802,38 @@
       <!-- How it works -->
       <section id="how-it-works">
         <div class="container">
-          <h2 class="section-title">How it works</h2>
+          <h2 class="section-title">How to get started on Stake</h2>
           <p class="section-subtitle">
-            Explain the basic steps for a new user.
+            The process is straightforward. You create an account, add funds and choose how you
+            want to play – all in a few steps.
           </p>
           <div class="steps-grid">
             <div class="step-item">
               <div class="step-badge">1</div>
-              <div class="step-title">Step one</div>
-              <div class="step-text">Short explanation.</div>
+              <div class="step-title">Create your Stake account</div>
+              <div class="step-text">
+                Click any “Go to Stake” button on this page. On Stake’s official site, sign up
+                using your email or preferred method. Registration is quick and takes only a
+                couple of minutes.
+              </div>
             </div>
             <div class="step-item">
               <div class="step-badge">2</div>
-              <div class="step-title">Step two</div>
-              <div class="step-text">Short explanation.</div>
+              <div class="step-title">Deposit using supported methods</div>
+              <div class="step-text">
+                Choose a supported currency or digital asset and make a deposit. Always start
+                with an amount you are fully comfortable risking – real-money gaming is never
+                guaranteed profit.
+              </div>
             </div>
             <div class="step-item">
               <div class="step-badge">3</div>
-              <div class="step-title">Step three</div>
-              <div class="step-text">Short explanation.</div>
+              <div class="step-title">Explore sports and games</div>
+              <div class="step-text">
+                Switch between sports, live events and game sections from the main menu. You can
+                browse markets, adjust stake size, view potential outcomes and place bets in just
+                a few clicks.
+              </div>
             </div>
           </div>
         </div>
@@ -700,16 +842,23 @@
       <!-- Offer -->
       <section id="offer">
         <div class="container">
-          <h2 class="section-title">Welcome offer</h2>
+          <h2 class="section-title">Welcome deals & promotions</h2>
           <p class="section-subtitle">
-            Describe the offer and basic conditions.
+            Stake regularly runs promos for new and existing users: boosts, challenges, reloads
+            and more. Exact offers may vary by country and time.
           </p>
           <div class="offer-card">
             <div>
-              <div class="offer-badge">Limited time</div>
-              <div class="offer-title">Offer title placeholder</div>
+              <div class="offer-badge">For new users</div>
+              <div class="offer-title">Join Stake and unlock tailored rewards</div>
               <div class="offer-text">
-                Offer description placeholder. Replace with your own copy.
+                After registering on Stake, you can access current welcome deals and ongoing promotions
+                directly in the promotions or VIP section. These may include boosted odds, missions,
+                races, reloads or other personalised benefits based on your activity.
+                <br /><br />
+                Make sure to read the terms of each offer on Stake’s website carefully: wagering
+                requirements, expiry dates and eligible games or sports can differ depending on your
+                region and chosen currency.
               </div>
               <a
                 href="https://stake.com"
@@ -717,14 +866,15 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Activate offer
+                View offers on Stake
               </a>
               <p class="offer-terms">
-                Terms & conditions apply. 18+ only.
+                Promotions are provided and managed by Stake. Availability depends on your country
+                and local regulations. 18+ only.
               </p>
             </div>
             <div class="offer-visual">
-              <!-- Visual placeholder -->
+              Add here a banner or simple graphic illustrating bonuses, boosts or VIP progress.
             </div>
           </div>
         </div>
@@ -733,24 +883,49 @@
       <!-- FAQ -->
       <section id="faq">
         <div class="container">
-          <h2 class="section-title">FAQ</h2>
-          <p class="section-subtitle">Common questions and answers.</p>
+          <h2 class="section-title">Frequently asked questions</h2>
+          <p class="section-subtitle">Quick answers before you head over to Stake.</p>
           <div class="faq-grid">
             <div class="faq-item">
-              <div class="faq-question">Question 1</div>
-              <div class="faq-answer">Answer placeholder.</div>
+              <div class="faq-question">Is Stake a legitimate platform?</div>
+              <div class="faq-answer">
+                Stake is a widely known brand in the real-money gaming space and operates under
+                licences issued by recognised regulators. Exact licensing details and restricted
+                territories are listed directly on the official Stake website – always check them
+                before registering.
+              </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question">Question 2</div>
-              <div class="faq-answer">Answer placeholder.</div>
+              <div class="faq-question">Do I need to register on this site?</div>
+              <div class="faq-answer">
+                No. This page is an independent informational landing. You do not create an account
+                here. All registration, verification, deposits and withdrawals happen directly on
+                Stake at the official domain.
+              </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question">Question 3</div>
-              <div class="faq-answer">Answer placeholder.</div>
+              <div class="faq-question">Who can use Stake?</div>
+              <div class="faq-answer">
+                Stake is intended strictly for adults. You must be at least 18 years old (or the
+                legal age in your jurisdiction) and reside in a country where access to the platform
+                is allowed. If your country is restricted, you should not attempt to use the service.
+              </div>
             </div>
             <div class="faq-item">
-              <div class="faq-question">Question 4</div>
-              <div class="faq-answer">Answer placeholder.</div>
+              <div class="faq-question">Do I need cryptocurrency to play?</div>
+              <div class="faq-answer">
+                Stake focuses heavily on digital assets and supports several popular coins and tokens.
+                In some regions, alternative options may also be available. Check the “Deposit”
+                section on Stake after registration to see which methods are accessible for you.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Can I play on mobile?</div>
+              <div class="faq-answer">
+                Yes. Stake is fully optimised for smartphones and tablets. You can access the
+                platform via a mobile browser and enjoy the same core features: live markets,
+                in-house games, quick deposits and more.
+              </div>
             </div>
           </div>
         </div>
@@ -759,12 +934,30 @@
       <!-- Responsible -->
       <section id="responsible">
         <div class="container">
-          <h2 class="section-title">Responsible use</h2>
+          <h2 class="section-title">Responsible gaming</h2>
           <p class="section-subtitle">
-            Short message about responsible behaviour.
+            Real-money games should always remain a form of entertainment, not a way to fix financial
+            problems or earn a stable income.
           </p>
           <div class="responsible-card">
-            <!-- Responsible message placeholder -->
+            <p>
+              Before you join Stake or any similar platform, decide in advance how much money you
+              are comfortable risking and treat that amount as the cost of entertainment. Never play
+              with funds needed for rent, bills, debts or other essential expenses.
+            </p>
+            <br />
+            <p>
+              Avoid chasing losses or trying to “win it back”. Take regular breaks, and stop
+              immediately if you feel frustrated, angry or out of control. If you notice that
+              gaming starts to affect your relationships, work or mental health, seek professional
+              help and consider using self-exclusion or limit tools.
+            </p>
+            <br />
+            <p>
+              Stake provides its own tools and information for responsible gaming on the official
+              website. Please read those resources carefully and use the platform only if you can
+              maintain a healthy, balanced approach.
+            </p>
           </div>
         </div>
       </section>
@@ -772,10 +965,10 @@
 
     <footer>
       <div class="container footer-inner">
-        <div>© Brand, 18+ only.</div>
+        <div>© Stake Guide. Independent informational page. 18+ only.</div>
         <div class="footer-links">
-          <span class="footer-link">Privacy policy</span>
-          <span class="footer-link">Terms of use</span>
+          <span class="footer-link">Privacy policy (placeholder)</span>
+          <span class="footer-link">Terms of use (placeholder)</span>
         </div>
       </div>
     </footer>
@@ -799,4 +992,3 @@
   </script>
 </body>
 </html>
-
