@@ -283,12 +283,12 @@
 
     .hero-tag {
       align-self: flex-start;
-      padding: 4px 10px;
-      font-size: 11px;
+      padding: 0;
+      font-size: 0;
       border-radius: var(--radius-full);
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      color: transparent;
     }
 
     .hero-mock {
@@ -296,34 +296,13 @@
       border-radius: 18px;
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(31, 41, 55, 0.9);
-      display: flex;
-      flex-direction: column;
-      padding: 14px;
-      gap: 10px;
-      font-size: 12px;
+      overflow: hidden;
     }
 
-    .hero-mock-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text-muted);
-    }
-
-    .hero-mock-pill {
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      background: rgba(31, 41, 55, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      font-size: 11px;
-    }
-
-    .hero-mock-bar {
-      height: 5px;
-      border-radius: var(--radius-full);
-      background: linear-gradient(90deg, #22c55e, #4f46e5);
-      width: 70%;
-      margin-top: 4px;
+    .hero-mock img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     @media (max-width: 880px) {
@@ -684,23 +663,14 @@
             </p>
           </div>
           <div class="hero-visual">
-            <div class="hero-tag">Stake snapshot (illustrative)</div>
+            <div class="hero-tag"></div>
             <div class="hero-mock">
-              <div class="hero-mock-row">
-                <span>Live sports</span>
-                <span class="hero-mock-pill">In-play markets</span>
-              </div>
-              <div class="hero-mock-bar"></div>
-              <div class="hero-mock-row">
-                <span>Original games</span>
-                <span class="hero-mock-pill">Instant action</span>
-              </div>
-              <div class="hero-mock-bar" style="width: 60%;"></div>
-              <div class="hero-mock-row">
-                <span>Crypto payments</span>
-                <span class="hero-mock-pill">Fast deposits & payouts</span>
-              </div>
-              <div class="hero-mock-bar" style="width: 85%;"></div>
+              <!-- Banner image -->
+              <img
+                src="https://drive.google.com/drive/folders/15cGW4gnIUUUjVLZGEtcMEv-mpSmitep7"
+                alt="Stake banner"
+              />
+              <!-- Лучше заменить src на прямую ссылку на файл с баннером -->
             </div>
           </div>
         </div>
@@ -735,9 +705,6 @@
               </p>
             </div>
             <div class="about-placeholder">
-              <div style="margin-bottom: 4px; font-weight: 500;">
-                Highlights at a glance
-              </div>
               <div>
                 <span class="about-chip">Sports & live events</span>
                 <span class="about-chip">Original in-house games</span>
@@ -745,10 +712,6 @@
                 <span class="about-chip">Fast withdrawals</span>
                 <span class="about-chip">VIP rewards</span>
                 <span class="about-chip">Mobile-first interface</span>
-              </div>
-              <div style="margin-top: 10px;">
-                Use this space for a screenshot, logo strip or a short feature list that matches
-                your target audience.
               </div>
             </div>
           </div>
